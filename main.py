@@ -10,7 +10,6 @@ from datetime import datetime
 from aiogram.types import BotCommand, BotCommandScopeDefault
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from aiogram.utils.keyboard import ReplyKeyboardBuilder
-import schedule
 import time
 BOT_TOKEN = '6785002507:AAEVPYCeB_GLYQ8SOqMMBAqXCDUn7nVQhGM'
 conn = psycopg.connect("dbname=tgnotify user=postgres password=123")
@@ -171,7 +170,3 @@ async def start():
 
 if __name__ == '__main__':
     asyncio.run(start())
-
-while True:
-    schedule.run_pending()
-    time.sleep(1)
